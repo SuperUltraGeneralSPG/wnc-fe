@@ -24,6 +24,8 @@ const AddBoard = () => {
   };
   return (
     <div>
+      <br />
+      <br />
       <form>
         제목
         <br />
