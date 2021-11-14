@@ -3,7 +3,7 @@ Button:visited {
 }
 Button {
   text-decoration: none;
-  color: white;
+  color: #060b26;
 }
 Button:visited {
   text-decoration: none;
@@ -28,7 +28,7 @@ Button:active {
 }
 
 .authBox{
-    border: 1px solid #060b26;
+    border: 3px solid #060b26;
     border-radius: 5px;
 }
 
@@ -53,10 +53,6 @@ Button:active {
     height: 2rem;
 }
 
-.orderList{
-  word-break: break-all;
-}
-
 .infoBox.user_category, 
 .infoBox.user_name,
 .infoBox.user_id,
@@ -66,6 +62,41 @@ Button:active {
     justify-content: flex-start;
 }
 
-.infoBox.buttonWrapper{
+.infoBox .buttonWrapper{
   justify-content: space-between;
+}
+
+.boardBtns{
+  display:flex;
+  justify-content: right;
+}
+
+.boardBtns Button{
+  margin-right: 40px;
+}
+
+.buttonWrapper Button{
+  margin: 10px 5px 10px 5px;
+}
+
+.user_id Button,
+.addCareer Button{
+  font-size: 0.8rem;
+}
+
+#joinButton{
+  margin: 10px;
+}
+
+.careerItem Button{
+  font-size:0.8rem;
+  margin: 5px 0px 0px 5px;
+}
+
+.careerList{
+  display:flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 3px solid #060b26;
+  border-radius: 5px;
 }

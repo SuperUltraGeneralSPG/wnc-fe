@@ -124,7 +124,7 @@ const Profile = () => {
           </div>
         ) : <></>}
       </div>
-      <div class="infoBox buttonWrapper">
+      <div class="buttonWrapper">
         <Button onClick={modifyUserInfo}>수정하기</Button>
         <Button onClick={derigisterUser}>탈퇴하기</Button>
       </div>
