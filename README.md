@@ -12,7 +12,7 @@ https://sites.google.com/view/cnu-wnc/%ED%99%88
 ![image](https://user-images.githubusercontent.com/80890062/141689725-3609ce02-a0e9-4d83-995c-8473a11d58fe.png)
 
 
-##🛠 Frontend Tech Stack 🛠
+## Frontend Tech Stack 🛠
 <p>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
