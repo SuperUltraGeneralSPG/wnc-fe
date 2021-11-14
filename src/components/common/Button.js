@@ -3,7 +3,7 @@ import styled from "styled-components";
 import palette from "../../lib/styles/palette";
 
 const StyledButton = styled.button`
-  border: none;
+  border: 3px solid #060b26;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
@@ -11,7 +11,9 @@ const StyledButton = styled.button`
   color: white;
   outline: none;
   cursor: pointer;
-  background: ${palette.gray[8]};
+  background: white;
+  right: 0;
+  margin-left: 65%;
   &:hover {
     background: ${palette.gray[6]};
     text-decoration: none;

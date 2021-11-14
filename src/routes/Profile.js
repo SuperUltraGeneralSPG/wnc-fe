@@ -24,6 +24,7 @@ const Profile = () => {
     }
 
     axios.post(`http://44.195.135.43/getInfo?userId=${user_id}`).then(response => {
+      console.log(response);
       const { login_id, password, user_type, name, career } = response.data;
       setUserId(login_id);
       setUserPw(password);
@@ -32,24 +33,6 @@ const Profile = () => {
       setCareerList(career);
     });
   }, [])
-
-  const checkIdOverlap = () => {
-    if (userId.length > 0) {
-      axios.post(`http://44.195.135.43/overlap?loginId=${userId}`).then(response => {
-        if (response.data === 'FAIL') {
-          setIdOverlapped(false);
-        } else {
-          setIdOverlapped(true);
-        }
-      });
-    } else {
-      alert('아이디를 입력해주세요.');
-    }
-  }
-
-  const changeUserId = (e) => {
-    setUserId(e.target.value);
-  }
 
   const changeUserPw = (e) => {
     setUserPw(e.target.value);
@@ -78,10 +61,14 @@ const Profile = () => {
 
   const modifyUserInfo = () => {
     let url = 'http://44.195.135.43/modify?';
-    url = careerList.reduce((_url, career) => _url + 'career=' + career + "&", url)
+    if (careerList) {
+      url = careerList.reduce((_url, career) => _url + 'career=' + career + "&", url)
+    }
+    console.log('userId', user_id);
     url += `loginId=${userId}&password=${userPw}&userId=${user_id}&userType=${userCategory}`;
 
     axios.put(url).then(response => {
+      console.log('response', response);
       if (response === 'FAIL') {
         alert('업데이트에 실패하였습니다.');
       } else {

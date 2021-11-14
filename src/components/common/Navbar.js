@@ -3,12 +3,31 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
+import Button from "./Button";
 import "./Navbar.css";
+import { useNavigate } from "react-router";
 /* 아이콘 컬러 전체 변경 기능 */
 import { IconContext } from "react-icons";
 function Navbar() {
+  const navigate = useNavigate();
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+
+  const userId = sessionStorage.getItem('user_id');
+
+  const clickLogIn = () => {
+    navigate('/auth');
+  }
+
+  const clickLogOut = () => {
+    const logOutConfirm = window.confirm('로그아웃 하시겠습니까?');
+    if (logOutConfirm) {
+      sessionStorage.removeItem('user_id');
+      alert('로그아웃 되었습니다.')
+      navigate('/');
+    }
+  }
+
   return (
     <>
       {/* 아이콘 컬러 전체 변경 기능 */}
@@ -18,6 +37,16 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <div className="nav-user">
+            {userId ? <div>
+              <Button onClick={clickLogOut}>Log out</Button>
+              <Button onClick={() => navigate('/profile')}>Profile</Button>
+            </div> : <div>
+              <Button onClick={clickLogIn}>Log In</Button>
+              <Button onClick={() => navigate('/join')}>Join</Button>
+            </div>}
+          </div>
+
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
