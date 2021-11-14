@@ -1,10 +1,16 @@
-import { React } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../components/common/Button";
+import axios from "axios";
+import { Route, Link } from "react-router-dom";
+import TutorList from "../components/common/TutorList";
 
 const Board = () => {
   return (
     <div>
-      <Button> 버튼 </Button>
+      <TutorList />
+      <Button>
+        <Link to="/addboard">과외 추가</Link>
+      </Button>
     </div>
   );
 };
