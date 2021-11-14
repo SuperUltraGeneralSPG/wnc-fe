@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Auth = () => {
     const navigate = useNavigate();
@@ -18,11 +19,17 @@ const Auth = () => {
 
     // login 버튼 클릭 이벤트
     const onClickLogin = () => {
-        if (inputId === "0000" && inputPw === "0000") {
-            navigate('/');
-        } else {
-            alert('id 또는 password가 잘못되었습니다.');
-        }
+        let url = `http://44.195.135.43/login?loginId=${inputId}&password=${inputPw}`;
+        console.log(url);
+        axios.post(url).then(response => {
+            const { data } = response;
+            if (data.response_code === "SUCCESS") {
+                sessionStorage.setItem('user_id', response.data.user_id);
+                navigate('/');
+            } else {
+                alert('id 또는 비밀번호가 잘못되었습니다.')
+            }
+        });
     }
 
     const onClickJoin = () => {
