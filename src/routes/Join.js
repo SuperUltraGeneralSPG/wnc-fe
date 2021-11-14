@@ -80,41 +80,45 @@ const Join = () => {
     }
 
     return (
-        <div>
+        <div class="wrapper" id="joinWrapper">
             <h2>Join</h2>
-            <div>
+            <div class="authBox" id="join_AuthBox"> 
+            <div class="infoBox user_category" id="category">
                 <label htmlFor='user_category'>분류 : </label>
                 <input name='user_category' type="radio" value="TEACHER" onChange={changeUserCategory} />선생님
                 <input name='user_category' type="radio" value="STUDENT" onChange={changeUserCategory} />학생
             </div>
-            <div>
+            <div class="infoBox user_name">
                 <label htmlFor='user_name'>이름 : </label>
                 <input type='text' name='user_name' value={userName} onChange={changeUserName} />
             </div>
-            <div>
+            <div class="infoBox user_id">
                 <label htmlFor='user_id'>ID : </label>
                 <input type='text' name='user_id' value={userId} onChange={changeUserId} />
                 <Button onClick={checkIdOverlap}>중복확인</Button>
                 {idOverlapped === true ? <p>사용가능한 아이디입니다.</p> : idOverlapped === false ? <p className="warning">중복된 아이디입니다.</p> : <></>}
             </div>
-            <div>
+            <div class="infoBox user_pw">
                 <label htmlFor='user_pw'>PW : </label>
                 <input type='password' name='user_pw' value={userPw} onChange={changeUserPw} />
             </div>
             {userCategory === 'TEACHER' ? (
                 <div>
-                    <div>
+                    <div class="infoBox addCareer">
                         <label htmlFor='career'>경력 추가 : </label>
                         <input type='text' name='user_id' value={careerInput} onChange={changeCareerInput} />
                         <Button onClick={pushCareer}>추가</Button>
                     </div>
-                    <div>
+                    <div class="infoBox careerList">
+                        {/* <div>경력 사항</div> */}
                         경력 사항
                         <CareerList careerList={careerList} deleteCareer={deleteCareer} modifyCareer={modifyCareer} />
                     </div>
                 </div>
             ) : <></>}
-            <Button onClick={registerNewUser}>가입하기</Button>
+            
+            </div>
+            <Button id="joinButton" onClick={registerNewUser}>가입하기</Button>
         </div >
     )
 }
