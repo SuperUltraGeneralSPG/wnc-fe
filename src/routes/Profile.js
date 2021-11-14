@@ -34,24 +34,6 @@ const Profile = () => {
     });
   }, [])
 
-  const checkIdOverlap = () => {
-    if (userId.length > 0) {
-      axios.post(`http://44.195.135.43/overlap?loginId=${userId}`).then(response => {
-        if (response.data === 'FAIL') {
-          setIdOverlapped(false);
-        } else {
-          setIdOverlapped(true);
-        }
-      });
-    } else {
-      alert('아이디를 입력해주세요.');
-    }
-  }
-
-  const changeUserId = (e) => {
-    setUserId(e.target.value);
-  }
-
   const changeUserPw = (e) => {
     setUserPw(e.target.value);
   }
@@ -121,10 +103,7 @@ const Profile = () => {
         <label htmlFor='user_name'>이름 : {userName}</label>
       </div>
       <div>
-        <label htmlFor='user_id'>ID : </label>
-        <input type='text' name='user_id' value={userId} onChange={changeUserId} />
-        <Button onClick={checkIdOverlap}>중복확인</Button>
-        {idOverlapped === true ? <p>사용가능한 아이디입니다.</p> : idOverlapped === false ? <p className="warning">중복된 아이디입니다.</p> : <></>}
+        <label htmlFor='user_id'>ID : {userId}</label>
       </div>
       <div>
         <label htmlFor='user_pw'>PW : </label>
