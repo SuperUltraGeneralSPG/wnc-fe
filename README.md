@@ -7,6 +7,8 @@ version: 0.1.0
 ### Probrain X Admin WnC
 https://sites.google.com/view/cnu-wnc/%ED%99%88
 
+
+## System Architecture
 ![image](https://user-images.githubusercontent.com/80890062/141689725-3609ce02-a0e9-4d83-995c-8473a11d58fe.png)
 
 
