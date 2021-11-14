@@ -8,7 +8,7 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Teachers",
+    title: "profile",
     path: "/profile",
     icon: <BsIcons.BsPersonBoundingBox />,
     cName: "nav-text",
