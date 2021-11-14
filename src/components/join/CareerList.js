@@ -33,12 +33,12 @@ const CareerItem = ({ career, idx, deleteCareer, modifyCareer }) => {
     }
 
     return modify ?
-        (<li>
+        (<li class="careerItem">
             <input type="text" value={careerText} onChange={changeCareerInput} />
             <Button onClick={confirmModify}>확인</Button>
             <Button onClick={cancelModify}>취소</Button>
         </li>) :
-        (<li class="orderList">
+        (<li class="orderList careerItem">
             <span>{career}</span>
             <Button onClick={clickModify}>수정</Button>
             <Button onClick={() => deleteCareer(idx)}>삭제</Button>
