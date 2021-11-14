@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import Button from '../components/common/Button';
 
 import CareerList from '../components/join/CareerList';
 
@@ -39,18 +40,26 @@ const Join = () => {
     }
 
     const pushCareer = () => {
-        setCareerList([...careerList, careerInput]);
-        setCareerInput('');
+        if (careerInput.length > 0) {
+            setCareerList([...careerList, careerInput]);
+            setCareerInput('');
+        } else {
+            alert('경력을 입력해주세요.');
+        }
     }
 
     const checkIdOverlap = () => {
-        axios.post(`http://44.195.135.43/overlap?loginId=${userId}`).then(response => {
-            if (response.data === 'FAIL') {
-                setIdOverlapped(false);
-            } else {
-                setIdOverlapped(true);
-            }
-        });
+        if (userId.length > 0) {
+            axios.post(`http://44.195.135.43/overlap?loginId=${userId}`).then(response => {
+                if (response.data === 'FAIL') {
+                    setIdOverlapped(false);
+                } else {
+                    setIdOverlapped(true);
+                }
+            });
+        } else {
+            alert('아이디를 입력해주세요.');
+        }
     }
 
     const deleteCareer = idx => {
@@ -63,13 +72,10 @@ const Join = () => {
 
     const registerNewUser = () => {
         let url = 'http://44.195.135.43/register?';
-        careerList.map(career => {
-            url += career + "&";
-        })
-        url += `id=${userId}&password=${userPw}&userType=${userCategory}`;
+        url = careerList.reduce((_url, career) => _url + 'career=' + career + "&", url)
+        url += `loginId=${userId}&name=${userName}&password=${userPw}&userType=${userCategory}`;
         axios.post(url).then(response => {
             navigate('/auth');
-            console.log(response);
         });
     }
 
@@ -88,7 +94,7 @@ const Join = () => {
             <div>
                 <label htmlFor='user_id'>ID : </label>
                 <input type='text' name='user_id' value={userId} onChange={changeUserId} />
-                <button onClick={checkIdOverlap}>중복확인</button>
+                <Button onClick={checkIdOverlap}>중복확인</Button>
                 {idOverlapped === true ? <p>사용가능한 아이디입니다.</p> : idOverlapped === false ? <p className="warning">중복된 아이디입니다.</p> : <></>}
             </div>
             <div>
@@ -100,7 +106,7 @@ const Join = () => {
                     <div>
                         <label htmlFor='career'>경력 추가 : </label>
                         <input type='text' name='user_id' value={careerInput} onChange={changeCareerInput} />
-                        <button onClick={pushCareer}>추가</button>
+                        <Button onClick={pushCareer}>추가</Button>
                     </div>
                     <div>
                         경력 사항
@@ -108,7 +114,7 @@ const Join = () => {
                     </div>
                 </div>
             ) : <></>}
-            <button onClick={registerNewUser}>가입하기</button>
+            <Button onClick={registerNewUser}>가입하기</Button>
         </div >
     )
 }

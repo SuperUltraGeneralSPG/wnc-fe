@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import Button from "../common/Button";
 
 const CareerList = ({ careerList, deleteCareer, modifyCareer }) => {
     return (
@@ -34,13 +35,13 @@ const CareerItem = ({ career, idx, deleteCareer, modifyCareer }) => {
     return modify ?
         (<li>
             <input type="text" value={careerText} onChange={changeCareerInput} />
-            <button onClick={confirmModify}>확인</button>
-            <button onClick={cancelModify}>취소</button>
+            <Button onClick={confirmModify}>확인</Button>
+            <Button onClick={cancelModify}>취소</Button>
         </li>) :
         (<li>
             <span>{career}</span>
-            <button onClick={clickModify}>수정</button>
-            <button onClick={() => deleteCareer(idx)}>삭제</button>
+            <Button onClick={clickModify}>수정</Button>
+            <Button onClick={() => deleteCareer(idx)}>삭제</Button>
         </li>)
 }
 

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import Button from '../components/common/Button';
 
 const Auth = () => {
     const navigate = useNavigate();
@@ -20,7 +21,6 @@ const Auth = () => {
     // login 버튼 클릭 이벤트
     const onClickLogin = () => {
         let url = `http://44.195.135.43/login?loginId=${inputId}&password=${inputPw}`;
-        console.log(url);
         axios.post(url).then(response => {
             const { data } = response;
             if (data.response_code === "SUCCESS") {
@@ -54,8 +54,8 @@ const Auth = () => {
                 <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} />
             </div>
             <div>
-                <button type='button' onClick={onClickLogin}>Login</button>
-                <button type='button' onClick={onClickJoin}>Join</button>
+                <Button onClick={onClickLogin}>Login</Button>
+                <Button onClick={onClickJoin}>Join</Button>
             </div>
         </div>
     )
