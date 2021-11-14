@@ -4,9 +4,11 @@
 version: 0.1.0
 
 ## 프로젝트 설명
-### Probran X Admin WnC
+### Probrain X Admin WnC
 https://sites.google.com/view/cnu-wnc/%ED%99%88
 
+
+## Tech Stack
 <p>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
