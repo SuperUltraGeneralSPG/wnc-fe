@@ -49,13 +49,17 @@ const Join = () => {
     }
 
     const checkIdOverlap = () => {
-        axios.post(`http://44.195.135.43/overlap?loginId=${userId}`).then(response => {
-            if (response.data === 'FAIL') {
-                setIdOverlapped(false);
-            } else {
-                setIdOverlapped(true);
-            }
-        });
+        if (userId.length > 0) {
+            axios.post(`http://44.195.135.43/overlap?loginId=${userId}`).then(response => {
+                if (response.data === 'FAIL') {
+                    setIdOverlapped(false);
+                } else {
+                    setIdOverlapped(true);
+                }
+            });
+        } else {
+            alert('아이디를 입력해주세요.');
+        }
     }
 
     const deleteCareer = idx => {
