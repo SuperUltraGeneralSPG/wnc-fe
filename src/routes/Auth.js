@@ -26,10 +26,16 @@ const Auth = () => {
             if (data.response_code === "SUCCESS") {
                 sessionStorage.setItem('user_id', response.data.user_id);
                 navigate('/');
-            } else {
-                alert('id 또는 비밀번호가 잘못되었습니다.')
             }
-        });
+        }).catch(
+            function (error) {
+                const { response } = error;
+                if (response.status === 555) {
+                    const { data } = response;
+                    alert(data.error_message);
+                }
+            }
+        );
     }
 
     const onClickJoin = () => {
