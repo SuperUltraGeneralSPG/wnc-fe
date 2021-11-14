@@ -18,3 +18,38 @@ Button:hover,
 Button:active {
   text-decoration: none;
 }
+
+/* auth page */
+
+.wrapper{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.authBox{
+    border: 1px solid #060b26;
+    border-radius: 5px;
+}
+
+.infoBox{
+    margin: 10px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.infoBox input{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btnBox{
+    margin: 10px;
+}
+
+.btnBox Button{
+    margin: 5px;
+    height: 2rem;
+}
+

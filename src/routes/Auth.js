@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -43,21 +42,24 @@ const Auth = () => {
     }
 
     return (
-        <div>
+        <div className="wrapper">
             <h2>Login</h2>
-            <div>
-                <label htmlFor='input_id'>ID : </label>
-                <input type='text' name='input_id' value={inputId} onChange={handleInputId} />
+            <div className="authBox">
+                <div className="infoBox idBox">
+                    <label htmlFor='input_id'>ID: </label>
+                    <input type='text' name='input_id' value={inputId} onChange={handleInputId} />
+                </div>
+                <div className="infoBox pwBox">
+                    <label htmlFor='input_pw'>PW: </label>
+                    <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} />
+                </div>
             </div>
-            <div>
-                <label htmlFor='input_pw'>PW : </label>
-                <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} />
-            </div>
-            <div>
+            <div className="btnBox">
                 <Button onClick={onClickLogin}>Login</Button>
                 <Button onClick={onClickJoin}>Join</Button>
             </div>
         </div>
+
     )
 }
 export default Auth;

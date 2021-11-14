@@ -18,9 +18,7 @@ const Board = () => {
   return (
     <div>
       <TutorList />
-      <Button>
-        <Link to="/addboard">과외 추가</Link>
-      </Button>
+      <Button onClick={() => navigate('/addboard')}>과외 추가</Button>
     </div>
   );
 };
