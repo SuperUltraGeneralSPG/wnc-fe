@@ -4,7 +4,7 @@
 version: 0.1.0
 
 ## 프로젝트 설명
-### Probran X Admin WnC But we are SPG
+### Probran X Admin WnC
 https://sites.google.com/view/cnu-wnc/%ED%99%88
 
 <p>
