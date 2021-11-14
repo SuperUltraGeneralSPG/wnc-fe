@@ -104,10 +104,7 @@ const Profile = () => {
           <label htmlFor='user_name'>이름 : {userName}</label>
         </div>
         <div class="infoBox user_id">
-          <label htmlFor='user_id'>ID : </label>
-          <input type='text' name='user_id' value={userId} onChange={changeUserId} />
-          <Button onClick={checkIdOverlap}>중복확인</Button>
-          {idOverlapped === true ? <p>사용가능한 아이디입니다.</p> : idOverlapped === false ? <p className="warning">중복된 아이디입니다.</p> : <></>}
+          <label htmlFor='user_id'>ID : {userId}</label>
         </div>
         <div class="infoBox user_pw">
           <label htmlFor='user_pw'>PW : </label>
