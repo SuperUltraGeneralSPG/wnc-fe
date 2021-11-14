@@ -21,7 +21,6 @@ const Auth = () => {
     // login 버튼 클릭 이벤트
     const onClickLogin = () => {
         let url = `http://44.195.135.43/login?loginId=${inputId}&password=${inputPw}`;
-        console.log(url);
         axios.post(url).then(response => {
             const { data } = response;
             if (data.response_code === "SUCCESS") {

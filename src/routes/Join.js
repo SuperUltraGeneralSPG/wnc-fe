@@ -72,13 +72,10 @@ const Join = () => {
 
     const registerNewUser = () => {
         let url = 'http://44.195.135.43/register?';
-        careerList.map(career => {
-            url += career + "&";
-        })
-        url += `id=${userId}&password=${userPw}&userType=${userCategory}`;
+        url = careerList.reduce((_url, career) => _url + 'career=' + career + "&", url)
+        url += `loginId=${userId}&name=${userName}&password=${userPw}&userType=${userCategory}`;
         axios.post(url).then(response => {
             navigate('/auth');
-            console.log(response);
         });
     }
 
