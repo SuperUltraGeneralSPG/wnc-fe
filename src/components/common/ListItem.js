@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ListItemBlock = styled.div`
-  border: 1px solid skyblue;
+  border: 5px solid #060b26;
   padding: 10px;
   .contents {
     h2 {
