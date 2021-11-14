@@ -9,7 +9,6 @@ https://sites.google.com/view/cnu-wnc/%ED%99%88
 
 
 ## 사용 라이브러리
-- http-proxy-middleware: 2.0.1
 - react: 17.0.2
 - react-dom: 17.0.2
 - react-icons: 4.3.1
