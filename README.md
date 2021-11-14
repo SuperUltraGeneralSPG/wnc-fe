@@ -3,7 +3,7 @@
 
 version: 0.1.0
 
-## 프로젝트 설명
+## Project Description
 ### Probrain X Admin WnC
 https://sites.google.com/view/cnu-wnc/%ED%99%88
 
@@ -12,7 +12,7 @@ https://sites.google.com/view/cnu-wnc/%ED%99%88
 ![image](https://user-images.githubusercontent.com/80890062/141689725-3609ce02-a0e9-4d83-995c-8473a11d58fe.png)
 
 
-## Frontend Tech Stack
+##🛠 Frontend Tech Stack 🛠
 <p>
 <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
@@ -21,7 +21,7 @@ https://sites.google.com/view/cnu-wnc/%ED%99%88
 <img src="https://img.shields.io/badge/NGINX-009639?style=flat-square&logo=NGINX&logoColor=white"/>
 </p>
 
-## 사용 라이브러리
+## Library
 - react: 17.0.2
 - react-dom: 17.0.2
 - react-icons: 4.3.1
