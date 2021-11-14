@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import Button from '../components/common/Button';
 
 const Auth = () => {
     const navigate = useNavigate();
@@ -54,8 +55,8 @@ const Auth = () => {
                 <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} />
             </div>
             <div>
-                <button type='button' onClick={onClickLogin}>Login</button>
-                <button type='button' onClick={onClickJoin}>Join</button>
+                <Button onClick={onClickLogin}>Login</Button>
+                <Button onClick={onClickJoin}>Join</Button>
             </div>
         </div>
     )
