@@ -53,3 +53,19 @@ Button:active {
     height: 2rem;
 }
 
+.orderList{
+  word-break: break-all;
+}
+
+.infoBox.user_category, 
+.infoBox.user_name,
+.infoBox.user_id,
+.infoBox.user_pw,
+.infoBox.careerList,
+.infoBox.addCareer{
+    justify-content: flex-start;
+}
+
+.infoBox.buttonWrapper{
+  justify-content: space-between;
+}

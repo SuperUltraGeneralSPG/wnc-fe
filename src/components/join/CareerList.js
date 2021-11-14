@@ -38,7 +38,7 @@ const CareerItem = ({ career, idx, deleteCareer, modifyCareer }) => {
             <Button onClick={confirmModify}>확인</Button>
             <Button onClick={cancelModify}>취소</Button>
         </li>) :
-        (<li>
+        (<li class="orderList">
             <span>{career}</span>
             <Button onClick={clickModify}>수정</Button>
             <Button onClick={() => deleteCareer(idx)}>삭제</Button>
